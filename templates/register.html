@@ -1,0 +1,37 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Register
+{% endblock %}
+
+{% block content %}
+
+<h1>Registration</h1>
+<div>
+    <form action="/register" method="POST" class="pure-form important" >
+         <label for="nickname">Nickname:
+            <input type="text" id="nickname" name="nickname" placeholder="Nickname"><br><br>
+         </label>
+         <label for="email">Email:
+            <input type="email" id="email" name="email" placeholder="Email">
+        </label><br><br>
+        <label for="password">Password:
+            <input type="password" id="password" name="password" placeholder="Password">
+        </label><br><br>
+        <label for="cpassword">Confirm Password:
+        <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password">
+        </label><br><br>
+        <button type="submit" class="pure-button" name="submit" value="Submit">Register</button>
+    </form>
+</div>
+
+{% if error == 'Password' %}
+    <p class="important"> The confirmation password did not match password, please try again</p>
+
+{% elif error == 'Nickname' %}
+    <p class="important"> The nickname has already beeing used, please try again</p>
+
+{% elif error == 'Mail' %}
+    <p class="important"> This Email is linked to another account, please login with that account</p>
+
+{% endif %}
+{% endblock %}
