@@ -1,0 +1,65 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Add Page
+{% endblock %}
+
+{% block content %}
+
+<p class="text"> To add a contact fill the forum below with the information</p>
+
+<div class="center">
+    <form class="pure-form text" method="POST" action="/add">
+
+
+        <label for="name"> Name:<br>
+            <input type="text" name="name" placeholder="Name">
+        </label><br>
+
+        <label for="lastname"> Lastname:<br>
+            <input type="text" name="lastname" placeholder="Lastname">
+        </label><br>
+
+        <label for="nickname"> Nickname:<br>
+            <input type="text" name="nickname" placeholder="Nickname">
+        </label><br>
+
+        <label for="company"> Company:<br>
+            <input type="text" name="company" placeholder="Company">
+        </label><br>
+
+        <label for="phone"> Phone Number:<br>
+            <input type="text" name="phone" placeholder="Phone Number">
+        </label><br>
+
+        <label for="email"> Email: <br>
+            <input type="email" name="email" placeholder="Email">
+        </label><br>
+
+        <label for="address"> Address: <br>
+            <input type="text" name="address" placeholder="Address">
+        </label><br>
+
+        <label for="birthday"> Birthday:<br>
+            <input type="date" name="birthday" placeholder="Birthday">
+        </label><br>
+
+        <button type="submit" name="submit" value="Submit" class="pure-button">Add</button>
+    </form>
+</div>
+
+<br> <br>
+<div>
+
+    {% if data %}
+
+        <p class="text">The contact was successfully added </p>
+
+    {% endif %}
+
+</div>
+
+<a href="https://marius97.pythonanywhere.com/phonebook">
+    <button type="button" class="pure-button" value="Link"> Back</button>
+</a>
+
+{% endblock %}
