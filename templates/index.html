@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to my Website</h1>
+    <h2>The purpose of this site is to challenge me to implement some projects
+    that I do from time to time online </h2>
+
+{%if user %}
+    <p class="text"> Welcome {{user}} to view the project that I implemented on
+    my website until now press the button below and enjoy</p>
+    <div class= 'text'>
+        <a href='http://marius97.pythonanywhere.com/menu'>
+        <button class='pure-button' type='button' value='link'>Projects</button></a>
+    </div>
+
+{% else %}
+    <p class="text"> Before starting and letting you know what
+    I am doing in my free time,I would like that you register to my site</p>
+    <p class="text"> and log in or just log in if you are already registered to
+    have the opportunity to know each other. </p>
+{%endif%}
+
+{% endblock %}
