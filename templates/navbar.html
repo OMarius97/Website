@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script src="/static/javascript/javascript.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+          integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+
+<body>
+    <nav class="nav">
+        <ul class="ul">
+
+            {%if user %}
+                {%if user == 'empty' %}
+                    <li class="li-right"><a href="http://marius97.pythonanywhere.com/register">Register</a></li>
+                    <li class="li-right"><a href="http://marius97.pythonanywhere.com/login">Login</a></li>
+                {% else %}
+                    <li class="li-right"><a href="http://marius97.pythonanywhere.com/login">
+                        Logout</a></li>
+                    <li class="li-right"><a>{{user}}</a></li>
+                {%endif%}
+
+            {% else %}
+                <li class="li-right"><a href="http://marius97.pythonanywhere.com/login">Login</a></li>
+                <li class="li-right"><a href="http://marius97.pythonanywhere.com/register">Register</a></li>
+            {%endif%}
+
+            <li class="li-center"><a href="http://marius97.pythonanywhere.com/"><span class="material-icons">cottage</span></a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="http://marius97.pythonanywhere.com/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
