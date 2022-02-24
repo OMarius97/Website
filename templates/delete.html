@@ -1,0 +1,75 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Delete Page
+{% endblock %}
+
+{% block content %}
+
+    <p class="text"> Chose the criteria you want to search for</p>
+
+    <div class="text">
+        <form class="pure-form" method="POST" action="/delete">
+
+            <label for="name"> Name:<br>
+                <input type="text" name="name" placeholder="Name">
+            </label><br><br>
+
+            <label for="phone"> Phone Number:<br>
+                <input type="text" name="phone" placeholder="Phone">
+            </label><br><br>
+
+            <button type="submit" name="submit" value="Submit" class="pure-button">Search</button> <br> <br>
+
+        </form>
+
+    </div>
+    <div>
+        {% if result %}
+            <table align="center" class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Lastname</th>
+                        <th>Nick Name</th>
+                        <th>Company</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Birthday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in result %}
+                        <tr bgcolor="white" class="pure-table">
+                        {% for data in i %}
+                            <td> {{ data }} </td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    <div class="text">
+        <p>Please confirm that you want to delete the contact by filling in
+        both name and phone number</p>
+
+        <form class="pure-form" method="POST" action="/delete">
+
+            <label for="name_confirm"> Name:
+                <input type="text" name="name_confirm" placeholder="Name">&nbsp
+            </label>
+
+            <label for="phone_confirm">Phone Number:
+                <input type="text" name="phone_confirm" placeholder="Phone">&nbsp &nbsp
+            </label>
+
+            <button type="submit" name="Confirm" value="confirm" class="pure-button">Confirm</button> <br> <br>
+        </form>
+        {% endif %}
+
+        {% if confirm %}
+        <p class="text"> The contact has just been deleted </p>
+        {% endif %}
+    </div>
+    <a href="https://marius97.pythonanywhere.com/phonebook"><button type="button" class="pure-button" value="Link"> Back </button></a>
+{% endblock %}
