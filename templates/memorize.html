@@ -1,0 +1,46 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Memorize
+{% endblock %}
+
+{% block content %}
+<h1> Memorize </h1>
+
+<p class="text"> After pressing the button Start you will have {{ seconds }} to memorize a sequence of number.
+    Try to memorize it and insert in the form.</p>
+
+<p class="important"> insert the sequence of the numbers without the colon </p>
+
+{% if level >=0 and level <= 4 %}
+    <div id="vanish" align="center">
+    <button onclick="display({{ listlevel[level] }},{{ seconds }})" class="pure-button"> Start </button>
+        <p id="display" class="unselect important"> </p>
+    </div>
+
+    <div style="display: none" id="hideout" align="center">
+        <form method="POST" class="pure-form" action="/Memorize">
+            <input type="text" name="answer" placeholder="answer">
+            <button class="pure-button" type="submit" name="Submit" >Submit</button>
+        </form>
+    </div>
+
+
+{% elif level == -1 %}
+    <p class="text"> Sorry unfortunately you did not pass but wou can try
+    again if you want <p>
+    <div align="center">
+        <a  href="http://marius97.pythonanywhere.com/difficulty2">
+        <button type="button" class="pure-button " value="Link"> Click Here</button>
+        </a>
+    </div>
+{% else %}
+    <p class="text"> Congratulation you win, Well done
+        Do you want to try again?<p>
+    <div align="center">
+        <a  href="http://marius97.pythonanywhere.com/difficulty2">
+        <button type="button" class="pure-button " value="Link"> Click Here</button>
+        </a>
+    </div>
+{% endif %}
+
+{% endblock %}
