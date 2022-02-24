@@ -1,0 +1,24 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+<h1>Login</h1>
+<div>
+    <form action="/login" method="POST" class="pure-form important" >
+         <label for="email">Email:
+            <input type="email" name="email" placeholder="Email">
+        </label><br><br>
+        <label for="password">Password:
+            <input type="password" name="password" placeholder="Password">
+        </label><br><br>
+        <button type="submit" class="pure-button" name="submit" value="Submit">Login</button>
+    </form>
+</div>
+
+{% if user == 'empty' %}
+    <p class="text">Any user foud with the inserted credential</p>
+
+{%endif%}
+{% endblock %}
