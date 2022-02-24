@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Difficulties
+{% endblock %}
+
+{% block content %}
+<h1>This is guess the number game </h1>
+
+<div class='box'>
+    <p class='important'> Rule of the game</p>
+    <p class = 'text'>You have to guess the number between 1 and another number depending on the difficulty:<br>
+    Easy 1 - 5 <br> Normal 1-10 <br> Impossible 1-15 <br>
+    You have 3 lives in total, so use them wisely <br><br>
+    Good Luck</p>
+</div>
+
+
+<div>
+    <p class="text"> Before start chose the level of difficulty </p>
+    <form class="text" method="POST" action="/difficulty1">
+        <button class="pure-button" type="submit" name="easy" value="easy">Easy</button>
+        <button class="pure-button" type="submit" name="normal" value="normal">Normal</button>
+        <button class="pure-button" type="submit" name="impossible" value="impossible">Impossible</button>
+    </form>
+    <div class ='text'>
+        {% for i in diff %}
+            <p> Difficulty set to {{ i }} <br><br> Good Luck! </p>
+            <a href="http://marius97.pythonanywhere.com/Guess-the-number"><button type="button" class="pure-button center" value="Link" > Click to start</button></a> </p>
+        {% endfor %}
+    </div>
+</div>
+<br>
+<div align="right">
+    <a href = 'http://marius97.pythonanywhere.com/menu'>
+    <button class='pure-button' type='button' value='link'> Back</button></a></td>
+</div>
+
+{% endblock %}
