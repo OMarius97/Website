@@ -1,0 +1,33 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Contact Page
+{% endblock %}
+
+{% block content %}
+
+
+    <form class="pure-form text contact" method="POST" action="/contact">
+
+        <label for="title"> Title: </label><br>
+        <select name="title" id="title">
+                <option>Mr</option>
+                <option>Ms</option>
+                <option>Mrs</option>
+                <option>Miss</option>
+            </select><br><br>
+            <label for="name"> Name:</label><br>
+                <input type="text" name="name" placeholder="Your name"><br><br>
+            <label for="email"> Email:</label><br>
+                <input type="email" name="email" placeholder="Your email"><br><br>
+            <label for="subject"> Subject:</label><br>
+                <textarea  class="textarea" type="text" name="subject" placeholder="Type your message here"></textarea><br><br>
+            <button type="submit" class="pure-button" value="submit" > Send </button>
+    </form>
+
+    {% if confirmation == 'no' %}
+        <p class="text"> One important element is missing please try again </p>
+    {% elif confirmation == 'yes' %}
+        <p class="text">Message sent</p>
+    {% endif %}
+
+{% endblock %}
