@@ -1,0 +1,39 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Difficulty
+{% endblock %}
+
+{% block content %}
+
+<h1>This is the Memorize</h1>
+
+
+<div class='box'>
+    <p class='important'> Rule of the game</p>
+    <p class = 'text'>At the beginning, some numbers will be displayed that you will have to memorize. <br> Depending on the level of difficulty you will have a certain amount of seconds to memorize a certain amount of numbers.<br><br>
+    Easy: 3 Seconds for 1 to 5 numbers <br> Normal: 5 seconds for 6 to 10 numbers <br> Impossible: 7 Seconds for 11 to 15 <br><br>
+    You have only one live, so use it wisely <br><br>
+    Good Luck</p>
+</div>
+
+
+<div>
+    <p class="text"> Before start chose the level of difficulty </p>
+    <form class="text" method="POST" action="/difficulty2">
+        <button class="pure-button" type="submit" name="easy" value="easy">Easy</button>
+        <button class="pure-button" type="submit" name="normal" value="normal">Normal</button>
+        <button class="pure-button" type="submit" name="impossible" value="impossible">Impossible</button>
+    </form>
+    <div class ='text'>
+        {% for i in diff %}
+            <p> Difficulty set to {{ i }} <br><br> Good Luck!
+            <a href="http://marius97.pythonanywhere.com/Memorize"><button type="button" class="pure-button center" value="Link" > Click to start</button></a> </p>
+        {% endfor %}
+    </div>
+</div>
+<br>
+<div align="right">
+    <a href = 'http://marius97.pythonanywhere.com/menu'>
+    <button class='pure-button' type='button' value='link'> Back</button></a>
+</div>
+{% endblock %}
