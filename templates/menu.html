@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block content %}
+
+<h1>Hi {{ user }} this is the game menu </h1>
+
+<div class="box">
+    <table class = 'pure-table text', align='center'>
+        <tr>
+	        <th>Guess Number Game</th>
+	        <th>Memorize Game </th>
+	        <th>Phone Book</th>
+        </tr>
+        <tr>
+	        <td align='center'> <a href = 'http://marius97.pythonanywhere.com/difficulty1'>
+            <button class='pure-button' type='button' value='link'> Explore</button></a></td>
+            <td align='center'> <a href = 'http://marius97.pythonanywhere.com/difficulty2'>
+            <button class='pure-button' type='button' value='link'> Explore </button></a></td>
+            <td align='center'> <a href = 'http://marius97.pythonanywhere.com/phonebook'>
+            <button class='pure-button' type='button' value='link'> Explore</button></a></td>
+        </tr>
+    </table>
+</div>
+    <br>
+    <div align="right">
+        <a href = 'http://marius97.pythonanywhere.com/'>
+        <button class='pure-button' type='button' value='link'> Back</button></a></td>
+    </div>
+{% endblock %}
