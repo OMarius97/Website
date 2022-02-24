@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@700&display=swap');
+
+h1 {
+    text-align: center;
+    color: #05386B;
+    font-family: 'Neuton', serif;
+}
+
+h2 {
+    text-align: center;
+    color: #05386B;
+    font-family: 'Neuton', serif;
+}
+
+body{
+    background-color: #5CDB95;
+
+}
+
+.text{
+    text-align: center;
+    color: #EDF5E1;
+    font-family: 'Neuton', serif;
+}
+
+.unselect{
+        user-select: none;
+}
+
+.important{
+    text-align: center;
+    color: #05386B;
+    font-weight: bold;
+    font-family: 'Neuton', serif;
+}
+
+.box{
+    width: fit-content;
+    border: solid #EDF5E1 3px;
+    margin: auto;
+    align-content: center;
+;
+}
+.center{
+    align-items: center;
+}
+
+.ul{
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+li{
+    display: inline;
+}
+
+li a{
+    font-family: 'Anton', sans-serif;
+    color: #05386B;
+    padding: 5px;
+    text-decoration: none;
+}
+li a:hover{
+    color: #EDF5E1;
+}
+.li-right{
+    float: right;
+}
+.li-center{
+    float: none;
+    position: absolute;
+    right: 50%;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.contact {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 30px;
+    line-height: normal;
+}
+.textarea{
+    height: 200px;
+    width: 250px;
+}
+
+@media only screen and (max-device-width: 600px) {
+
+html {
+    font-size: 200%;
+}
+
+
+}
