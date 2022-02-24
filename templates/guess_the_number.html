@@ -1,0 +1,67 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Guess the Number
+{% endblock %}
+
+{% block content %}
+<h1> I am thinking of a number ......ok done try to guess it </h1>
+
+<p class='text'> To test your luck just fill the space below and press the submit button. <br>
+    If you are right a message will be displayed congratulating you for the result. <br>
+    Otherwise you will lose one life and you will receive a hint. </p>
+<p class='important'>You have {{ life }} left</p>
+
+{% if life == 3 %}
+    <div>
+        <form class="pure-form text" method="POST" action="/Guess-the-number">
+            <label for="guess1">
+                <input type='text' name='guess1' placeholder='Guess'>
+            </label>
+            <br> <br>
+            <button class='pure-button' type='submit' name='submit' value='submit'>Submit</button>
+        </form>
+    </div>
+{% endif %}
+{% if life == 2 %}
+    <div>
+        <form class="pure-form text" method="POST" action="/Guess-the-number">
+            <label for="guess2">
+                <input type='text' name='guess2' placeholder='Guess'>
+            </label>
+            <br> <br>
+            <button class='pure-button' type='submit' name='submit' value='submit'>Submit</button>
+        </form>
+    </div>
+{% endif %}
+
+{% if life == 1 %}
+    <div>
+        <form class="pure-form text" method="POST" action="/Guess-the-number">
+            <label for="guess3">
+                <input type='text' name='guess3' placeholder='Guess'>
+            </label>
+            <br> <br>
+            <button class='pure-button' type='submit' name='submit' value='submit'>Submit</button>
+        </form>
+    </div>
+{% endif %}
+
+{% if hint %}
+    <p class="important">{{ hint }}</p>
+{% endif %}
+
+<div class="important">
+{% if hint == 'Congratulation you win, Well done' or life == 0 %}
+    <p>Do you want to try again?</p>
+    <a href="http://marius97.pythonanywhere.com/difficulty1">
+        <button type="button" class="pure-button" value="Link"> Click here</button>
+    </a>
+{% endif %}
+</div>
+<br>
+
+<div align="right">
+    <a href = 'http://marius97.pythonanywhere.com/difficulty1'>
+    <button class='pure-button' type='button' value='link'> Back</button></a></td>
+</div>
+{% endblock %}
