@@ -1,0 +1,53 @@
+{% extends 'navbar.html' %}
+{% block title %}
+    Search Page
+{% endblock %}
+{% block content %}
+    <p class="text"> Chose the criteria you want to search for</p>
+
+    <div class="text">
+        <form class="pure-form" method="POST" action="/search">
+
+            <label for="name"> Name:<br>
+                <input type="text" name="name" placeholder="Name">
+            </label><br><br>
+
+            <label for="lastname"> Lastname:<br>
+                <input type="text" name="lastname" placeholder="Lastname">
+            </label><br><br>
+
+            <label for="phone"> Phone Number:<br>
+                <input type="text" name="phone" placeholder="Phone">
+            </label><br><br>
+            <button type="submit" name="submit" value="Submit" class="pure-button">Search</button> <br> <br>
+        </form>
+    </div>
+    <div>
+        {% if result %}
+            <table align="center" class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Lastname</th>
+                        <th>Nick Name</th>
+                        <th>Company</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Birthday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in result %}
+                        <tr bgcolor="white" class="pure-table">
+                        {% for data in i %}
+                            <td> {{ data }} </td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+    <a href="https://marius97.pythonanywhere.com/phonebook"><button type="button" class="pure-button" value="Link" > Back </button></a>
+{% endblock %}
